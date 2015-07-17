@@ -31,6 +31,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import javax.swing.JOptionPane;
+
 import model.manager.AdministrationManager;
 import model.manager.PackageManager;
 import model.manager.PatientManager;
@@ -58,6 +60,7 @@ import org.celllife.idart.gui.patient.tabs.ClinicInfoTab;
 import org.celllife.idart.gui.patient.tabs.IPatientTab;
 import org.celllife.idart.gui.patient.tabs.TreatmentHistoryTab;
 import org.celllife.idart.gui.patient.tabs.TreatmentManagementTab;
+import org.celllife.idart.gui.patient.tabs.ViralLoadTab;
 import org.celllife.idart.gui.platform.GenericFormGui;
 import org.celllife.idart.gui.prescription.AddPrescription;
 import org.celllife.idart.gui.reportParameters.PatientHistory;
@@ -1306,11 +1309,16 @@ public class AddPatient extends GenericFormGui implements iDARTChangeListener {
 			getHSession().flush();
 			tx.commit();
 
+			if(PatientManager.getLastPatientViralLoad(hSession, localPatient).getHighViralLoad())
+			{
+				JOptionPane.showMessageDialog(null, Messages.getString("patient.viralload.highviralloard.alert"));
+			}
+			
 			MessageBox m = new MessageBox(getShell(), SWT.OK | SWT.ICON_INFORMATION);
 			m.setText(Messages.getString("patient.save.confirmation.title")); //$NON-NLS-1$
 			m.setMessage(MessageFormat.format(Messages.getString("patient.save.confirmation"),localPatient.getPatientId())); //$NON-NLS-1$
 			m.open();
-
+			
 			if (isAddnotUpdate || offerToPrintLabel) {
 				m = new MessageBox(getShell(), SWT.ICON_QUESTION | SWT.YES | SWT.NO);
 				m.setText(Messages.getString("patient.dialog.printInfoLable.title")); //$NON-NLS-1$
@@ -1321,7 +1329,7 @@ public class AddPatient extends GenericFormGui implements iDARTChangeListener {
 					break;
 				}
 			}
-
+			
 			return true;
 
 		} catch (HibernateException he) {
@@ -2140,9 +2148,14 @@ public class AddPatient extends GenericFormGui implements iDARTChangeListener {
 		treatmentHistoryTab.setParent(tabbedGroup);
 		treatmentHistoryTab.setStyle(SWT.NONE);
 		treatmentHistoryTab.setSession(getHSession());
+		
+		IPatientTab viralLoadTab = new ViralLoadTab();
+		viralLoadTab.setParent(tabbedGroup);
+		viralLoadTab.setStyle(SWT.NONE);
+		viralLoadTab.setSession(getHSession());
 
 		return new IPatientTab[] { addressTab, treatmentManagementTab,
-				clinicInfoTab, treatmentHistoryTab };
+				clinicInfoTab, treatmentHistoryTab , viralLoadTab};
 	}
 
 	private void cmdEkapaSearchWidgetSelected() {

@@ -1124,4 +1124,6 @@ public class PatientManager {
 		query.setMaxResults(1);
 		return (PatientViralLoad) query.list().get(0);
 	}
+	
+	
 }

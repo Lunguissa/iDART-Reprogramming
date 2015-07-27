@@ -26,7 +26,9 @@ import model.nonPersistent.ExportPackageInfo;
 
 import org.apache.log4j.Logger;
 import org.celllife.idart.commonobjects.iDartProperties;
+import org.celllife.idart.database.hibernate.PatientViralLoad;
 import org.celllife.idart.misc.iDARTUtil;
+import org.hibernate.Query;
 import org.hibernate.Session;
 
 public class DataExportFunctions {
@@ -61,6 +63,8 @@ public class DataExportFunctions {
 	private Map<Integer, List<List<Object>>> patientIdPrescriptionMap;
 	// Map<PatientID, List<List<Appointment detail>>>
 	private Map<Integer, List<List<Object>>> patientIdAppointmentMap;
+	// List<PatientViralLoad>>>
+	private List<PatientViralLoad> patientIdViralLoad;
 	// Map<PatientID, isPregnantAnDate>
 	private List<Integer> patientIdPregnantAtDate;
 	// Map<PatientID, Date>
@@ -134,6 +138,11 @@ public class DataExportFunctions {
 			patientIdAppointmentMap.clear();
 			patientIdAppointmentMap = null;
 		}
+		
+		if (patientIdViralLoad != null) {
+			patientIdViralLoad.clear();
+			patientIdViralLoad = null;
+		}
 
 		if (patientIdPregnantAtDate != null) {
 			patientIdPregnantAtDate.clear();
@@ -179,6 +188,11 @@ public class DataExportFunctions {
 			if (patientIdPregnantAtDate != null) {
 				patientIdPregnantAtDate.remove(this.patientId);
 			}
+			
+			if (patientIdViralLoad != null) {
+				patientIdViralLoad.remove(this.patientId);
+			}
+			
 			if (expectedRunoutDates != null) {
 				expectedRunoutDates.remove(this.patientId);
 			}
@@ -1072,6 +1086,19 @@ public class DataExportFunctions {
 			return formatDate(null, (Date) o);
 		else
 			return o.toString();
+	}
+	
+	public PatientViralLoad getLastPatientViralLoad(Session session, Integer patientId)
+	{
+		Query query = session.createQuery("SELECT pvl  FROM patientviralload as pvl where pvl.patient.id = :patid order by id desc");
+		query.setInteger("patid", patientId);
+		query.setMaxResults(1);
+		return (PatientViralLoad) query.list().get(0);
+	}
+	
+	public PatientViralLoad getLastPatientViralLoad(Integer patientId){
+		
+		return getLastPatientViralLoad(sess, patientId);
 	}
 
 	/**

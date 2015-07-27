@@ -1,0 +1,1117 @@
+24-07-2015 20:58:05 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 20:58:05 [main] ERROR tabase.hibernate.util.JDBCUtil - Error while running sql: select id from users
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.currentSession(JDBCUtil.java:94)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.executeSQL(JDBCUtil.java:125)
+	at org.celllife.idart.database.DatabaseTools.checkDatabase(DatabaseTools.java:82)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:116)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 13 more
+24-07-2015 20:58:05 [main] ERROR dart.start.PharmacyApplication - Error while checking database consistency: 
+org.celllife.idart.database.DatabaseException: Error retreiving user list.
+	at org.celllife.idart.database.DatabaseTools.checkDatabase(DatabaseTools.java:85)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:116)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+Caused by: org.celllife.idart.database.hibernate.util.DAOException: Error while running sql: select id from users . Message: The connection attempt failed.
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.executeSQL(JDBCUtil.java:151)
+	at org.celllife.idart.database.DatabaseTools.checkDatabase(DatabaseTools.java:82)
+	... 2 more
+Caused by: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.currentSession(JDBCUtil.java:94)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.executeSQL(JDBCUtil.java:125)
+	... 3 more
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 13 more
+24-07-2015 20:58:05 [main] DEBUG llife.idart.gui.login.LoginErr - Login Form Created
+24-07-2015 20:58:09 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 20:58:09 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 20:58:09 [main] INFO  dart.start.PharmacyApplication - iDART @IDART.VERSION.SHORT@ starting
+24-07-2015 20:58:09 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 20:58:09 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 20:58:10 [main] INFO  .commonobjects.iDartProperties - Loading Encrypted System Properties
+24-07-2015 20:58:10 [main] WARN  .commonobjects.iDartProperties - Property: localeLanguage is null
+24-07-2015 20:58:10 [main] INFO  ommonobjects.PropertiesManager - Loading properties for interface org.celllife.idart.commonobjects.SmsProperties
+24-07-2015 20:58:10 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 20:58:10 [main] ERROR e.idart.database.DatabaseTools - Error creating hibernate connection.
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.currentSession(JDBCUtil.java:94)
+	at org.celllife.idart.database.DatabaseTools.checkConnection(DatabaseTools.java:64)
+	at org.celllife.idart.database.DatabaseTools.checkDatabase(DatabaseTools.java:74)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:116)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 13 more
+24-07-2015 20:58:16 [main] DEBUG database.wizard.ConnectionPage - Updating properties
+24-07-2015 20:58:16 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 20:58:19 [main] DEBUG llife.idart.gui.login.LoginErr - Login Form Created
+24-07-2015 20:58:37 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 20:58:37 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 20:58:37 [main] INFO  dart.start.PharmacyApplication - iDART @IDART.VERSION.SHORT@ starting
+24-07-2015 20:58:37 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 20:58:37 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 20:58:37 [main] INFO  .commonobjects.iDartProperties - Loading Encrypted System Properties
+24-07-2015 20:58:37 [main] WARN  .commonobjects.iDartProperties - Property: localeLanguage is null
+24-07-2015 20:58:37 [main] INFO  ommonobjects.PropertiesManager - Loading properties for interface org.celllife.idart.commonobjects.SmsProperties
+24-07-2015 20:58:37 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 20:58:37 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 20:58:37 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 20:58:37 [main] ERROR dart.start.PharmacyApplication - Error while checking database consistency: 
+org.celllife.idart.database.DatabaseException: Error retreiving list of tables.
+	at org.celllife.idart.database.DatabaseTools.getTables(DatabaseTools.java:219)
+	at org.celllife.idart.database.DatabaseTools.checkDatabase(DatabaseTools.java:77)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:116)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+24-07-2015 20:58:37 [main] DEBUG llife.idart.gui.login.LoginErr - Login Form Created
+24-07-2015 20:58:41 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 20:58:41 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 20:58:42 [main] INFO  dart.start.PharmacyApplication - iDART @IDART.VERSION.SHORT@ starting
+24-07-2015 20:58:42 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 20:58:42 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 20:58:42 [main] INFO  .commonobjects.iDartProperties - Loading Encrypted System Properties
+24-07-2015 20:58:42 [main] WARN  .commonobjects.iDartProperties - Property: localeLanguage is null
+24-07-2015 20:58:42 [main] INFO  ommonobjects.PropertiesManager - Loading properties for interface org.celllife.idart.commonobjects.SmsProperties
+24-07-2015 20:58:42 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 20:58:42 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 20:58:42 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 20:58:42 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 20:58:42 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 20:58:42 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 20:58:42 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 20:58:43 [main] INFO  e.idart.database.DatabaseTools - Running liquibase file: org/celllife/idart/database/changelog-master.xml
+24-07-2015 20:58:43 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 20:58:43 [main] INFO                       liquibase - Successfully acquired change log lock
+24-07-2015 20:58:43 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 20:58:43 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 20:58:44 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 20:58:44 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 20:58:44 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 20:58:46 [main] ERROR dart.start.PharmacyApplication - Error while checking database consistency: 
+org.hibernate.HibernateException: Wrong column type: counselingDate, expected: timestamp
+	at org.hibernate.mapping.Table.validateColumns(Table.java:261)
+	at org.hibernate.cfg.Configuration.validateSchema(Configuration.java:1083)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:116)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:317)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1294)
+	at org.hibernate.cfg.AnnotationConfiguration.buildSessionFactory(AnnotationConfiguration.java:915)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.<init>(HibernateUtil.java:185)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.rebuildUtil(HibernateUtil.java:201)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.setValidation(HibernateUtil.java:227)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:147)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+24-07-2015 20:58:46 [main] DEBUG llife.idart.gui.login.LoginErr - Login Form Created
+24-07-2015 20:59:54 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 20:59:54 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 20:59:54 [main] INFO  dart.start.PharmacyApplication - iDART @IDART.VERSION.SHORT@ starting
+24-07-2015 20:59:54 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 20:59:54 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 20:59:54 [main] INFO  .commonobjects.iDartProperties - Loading Encrypted System Properties
+24-07-2015 20:59:54 [main] WARN  .commonobjects.iDartProperties - Property: localeLanguage is null
+24-07-2015 20:59:54 [main] INFO  ommonobjects.PropertiesManager - Loading properties for interface org.celllife.idart.commonobjects.SmsProperties
+24-07-2015 20:59:54 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 20:59:54 [main] ERROR e.idart.database.DatabaseTools - Error creating hibernate connection.
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.currentSession(JDBCUtil.java:94)
+	at org.celllife.idart.database.DatabaseTools.checkConnection(DatabaseTools.java:64)
+	at org.celllife.idart.database.DatabaseTools.checkDatabase(DatabaseTools.java:74)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:116)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 13 more
+24-07-2015 21:00:00 [main] DEBUG database.wizard.ConnectionPage - Updating properties
+24-07-2015 21:00:00 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:00 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:00 [main] DEBUG database.wizard.ConnectionPage - Updating properties
+24-07-2015 21:00:00 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:00 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:00 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:01 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:01 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:05 [main] INFO  .idart.database.DatabaseWizard - Writing updated properties to file.
+24-07-2015 21:00:05 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:05 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:05 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:05 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:05 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:05 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:06 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:07 [main] INFO  e.idart.database.DatabaseTools - Running liquibase file: org/celllife/idart/database/changelog-master.xml
+24-07-2015 21:00:07 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:00:07 [main] INFO                       liquibase - Successfully acquired change log lock
+24-07-2015 21:00:07 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:00:08 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:00:08 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:00:08 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:08 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:08 [main] ERROR e.idart.database.DatabaseTools - Error getting national clinic count
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.currentSession(JDBCUtil.java:94)
+	at org.celllife.idart.database.DatabaseTools.getNationalClinicCount(DatabaseTools.java:292)
+	at org.celllife.idart.database.DatabaseTools.checkClinicCount(DatabaseTools.java:283)
+	at org.celllife.idart.database.DatabaseTools.update(DatabaseTools.java:267)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:133)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 14 more
+24-07-2015 21:00:08 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:08 [main] ERROR e.idart.database.DatabaseTools - Error updating database.
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.currentSession(JDBCUtil.java:94)
+	at org.celllife.idart.database.DatabaseTools.update(DatabaseTools.java:305)
+	at org.celllife.idart.database.DatabaseTools.update(DatabaseTools.java:270)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:133)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 13 more
+24-07-2015 21:00:08 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:08 [main] ERROR tabase.hibernate.util.JDBCUtil - Error while running sql: SELECT value FROM simpledomain WHERE name = 'database_version'
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.currentSession(JDBCUtil.java:94)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.executeSQL(JDBCUtil.java:125)
+	at org.celllife.idart.database.DatabaseTools.isOldVersion(DatabaseTools.java:225)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:137)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 13 more
+24-07-2015 21:00:08 [main] ERROR dart.start.PharmacyApplication - Error while updateing the database: org.postgresql.util.PSQLException: The connection attempt failed.
+org.celllife.idart.database.DatabaseException: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.celllife.idart.database.DatabaseTools.update(DatabaseTools.java:309)
+	at org.celllife.idart.database.DatabaseTools.update(DatabaseTools.java:270)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:133)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+Caused by: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.currentSession(JDBCUtil.java:94)
+	at org.celllife.idart.database.DatabaseTools.update(DatabaseTools.java:305)
+	... 3 more
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 13 more
+24-07-2015 21:00:08 [main] DEBUG llife.idart.gui.login.LoginErr - Login Form Created
+24-07-2015 21:00:13 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:00:13 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:00:13 [main] INFO  dart.start.PharmacyApplication - iDART @IDART.VERSION.SHORT@ starting
+24-07-2015 21:00:13 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:00:13 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:00:14 [main] INFO  .commonobjects.iDartProperties - Loading Encrypted System Properties
+24-07-2015 21:00:14 [main] WARN  .commonobjects.iDartProperties - Property: localeLanguage is null
+24-07-2015 21:00:14 [main] INFO  ommonobjects.PropertiesManager - Loading properties for interface org.celllife.idart.commonobjects.SmsProperties
+24-07-2015 21:00:14 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:14 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:14 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:14 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:14 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:14 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:14 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:15 [main] INFO  e.idart.database.DatabaseTools - Running liquibase file: org/celllife/idart/database/changelog-master.xml
+24-07-2015 21:00:15 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:00:15 [main] INFO                       liquibase - Successfully acquired change log lock
+24-07-2015 21:00:15 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:00:15 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:00:16 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:00:16 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:16 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:00:17 [main] ERROR dart.start.PharmacyApplication - Error while checking database consistency: 
+org.hibernate.HibernateException: Wrong column type: counselingDate, expected: timestamp
+	at org.hibernate.mapping.Table.validateColumns(Table.java:261)
+	at org.hibernate.cfg.Configuration.validateSchema(Configuration.java:1083)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:116)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:317)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1294)
+	at org.hibernate.cfg.AnnotationConfiguration.buildSessionFactory(AnnotationConfiguration.java:915)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.<init>(HibernateUtil.java:185)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.rebuildUtil(HibernateUtil.java:201)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.setValidation(HibernateUtil.java:227)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:147)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+24-07-2015 21:00:17 [main] DEBUG llife.idart.gui.login.LoginErr - Login Form Created
+24-07-2015 21:01:21 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:01:21 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:01:21 [main] INFO  dart.start.PharmacyApplication - iDART @IDART.VERSION.SHORT@ starting
+24-07-2015 21:01:21 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:01:21 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:01:21 [main] INFO  .commonobjects.iDartProperties - Loading Encrypted System Properties
+24-07-2015 21:01:21 [main] WARN  .commonobjects.iDartProperties - Property: localeLanguage is null
+24-07-2015 21:01:21 [main] INFO  ommonobjects.PropertiesManager - Loading properties for interface org.celllife.idart.commonobjects.SmsProperties
+24-07-2015 21:01:21 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:01:21 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:01:21 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:01:21 [main] ERROR dart.start.PharmacyApplication - Error while checking database consistency: 
+org.celllife.idart.database.DatabaseException: Error retreiving list of tables.
+	at org.celllife.idart.database.DatabaseTools.getTables(DatabaseTools.java:219)
+	at org.celllife.idart.database.DatabaseTools.checkDatabase(DatabaseTools.java:77)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:116)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+24-07-2015 21:01:21 [main] DEBUG llife.idart.gui.login.LoginErr - Login Form Created
+24-07-2015 21:01:25 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:01:25 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:01:25 [main] INFO  dart.start.PharmacyApplication - iDART @IDART.VERSION.SHORT@ starting
+24-07-2015 21:01:25 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:01:25 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:01:25 [main] INFO  .commonobjects.iDartProperties - Loading Encrypted System Properties
+24-07-2015 21:01:25 [main] WARN  .commonobjects.iDartProperties - Property: localeLanguage is null
+24-07-2015 21:01:25 [main] INFO  ommonobjects.PropertiesManager - Loading properties for interface org.celllife.idart.commonobjects.SmsProperties
+24-07-2015 21:01:25 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:01:25 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:01:25 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:01:25 [main] ERROR dart.start.PharmacyApplication - Error while checking database consistency: 
+org.celllife.idart.database.DatabaseException: Error retreiving list of tables.
+	at org.celllife.idart.database.DatabaseTools.getTables(DatabaseTools.java:219)
+	at org.celllife.idart.database.DatabaseTools.checkDatabase(DatabaseTools.java:77)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:116)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+24-07-2015 21:01:25 [main] DEBUG llife.idart.gui.login.LoginErr - Login Form Created
+24-07-2015 21:05:43 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:05:43 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:05:43 [main] INFO  dart.start.PharmacyApplication - iDART @IDART.VERSION.SHORT@ starting
+24-07-2015 21:05:43 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:05:43 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:05:44 [main] INFO  .commonobjects.iDartProperties - Loading Encrypted System Properties
+24-07-2015 21:05:44 [main] WARN  .commonobjects.iDartProperties - Property: localeLanguage is null
+24-07-2015 21:05:44 [main] INFO  ommonobjects.PropertiesManager - Loading properties for interface org.celllife.idart.commonobjects.SmsProperties
+24-07-2015 21:05:44 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:05:44 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:05:44 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:05:44 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:05:44 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:05:44 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:05:44 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:05:45 [main] INFO  e.idart.database.DatabaseTools - Running liquibase file: org/celllife/idart/database/changelog-master.xml
+24-07-2015 21:05:45 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:05:45 [main] INFO                       liquibase - Successfully acquired change log lock
+24-07-2015 21:05:45 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:05:45 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:05:46 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:05:46 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:05:46 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:05:46 [main] ERROR e.idart.database.DatabaseTools - Error getting national clinic count
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.currentSession(JDBCUtil.java:94)
+	at org.celllife.idart.database.DatabaseTools.getNationalClinicCount(DatabaseTools.java:292)
+	at org.celllife.idart.database.DatabaseTools.checkClinicCount(DatabaseTools.java:283)
+	at org.celllife.idart.database.DatabaseTools.update(DatabaseTools.java:267)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:133)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 14 more
+24-07-2015 21:05:46 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:05:46 [main] INFO  e.idart.database.DatabaseTools - Running liquibase file: org/celllife/idart/database/changelog-South_Africa_clinics.xml
+24-07-2015 21:05:46 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:05:46 [main] INFO                       liquibase - Successfully acquired change log lock
+24-07-2015 21:05:46 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:05:46 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:05:54 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:05:54 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:05:55 [main] ERROR dart.start.PharmacyApplication - Error while checking database consistency: 
+org.hibernate.HibernateException: Wrong column type: resultDate, expected: timestamp
+	at org.hibernate.mapping.Table.validateColumns(Table.java:261)
+	at org.hibernate.cfg.Configuration.validateSchema(Configuration.java:1083)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:116)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:317)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1294)
+	at org.hibernate.cfg.AnnotationConfiguration.buildSessionFactory(AnnotationConfiguration.java:915)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.<init>(HibernateUtil.java:185)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.rebuildUtil(HibernateUtil.java:201)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.setValidation(HibernateUtil.java:227)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:147)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+24-07-2015 21:05:56 [main] DEBUG llife.idart.gui.login.LoginErr - Login Form Created
+24-07-2015 21:06:02 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:06:02 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:06:02 [main] INFO  dart.start.PharmacyApplication - iDART @IDART.VERSION.SHORT@ starting
+24-07-2015 21:06:02 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:06:02 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:06:03 [main] INFO  .commonobjects.iDartProperties - Loading Encrypted System Properties
+24-07-2015 21:06:03 [main] WARN  .commonobjects.iDartProperties - Property: localeLanguage is null
+24-07-2015 21:06:03 [main] INFO  ommonobjects.PropertiesManager - Loading properties for interface org.celllife.idart.commonobjects.SmsProperties
+24-07-2015 21:06:03 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:06:03 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:06:03 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:06:03 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:06:03 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:06:03 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:06:03 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:06:03 [main] INFO  e.idart.database.DatabaseTools - Running liquibase file: org/celllife/idart/database/changelog-master.xml
+24-07-2015 21:06:04 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:06:04 [main] INFO                       liquibase - Successfully acquired change log lock
+24-07-2015 21:06:04 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:06:04 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:06:05 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:06:05 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:06:05 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:06:05 [main] ERROR e.idart.database.DatabaseTools - Error getting national clinic count
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.currentSession(JDBCUtil.java:94)
+	at org.celllife.idart.database.DatabaseTools.getNationalClinicCount(DatabaseTools.java:292)
+	at org.celllife.idart.database.DatabaseTools.checkClinicCount(DatabaseTools.java:283)
+	at org.celllife.idart.database.DatabaseTools.update(DatabaseTools.java:267)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:133)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 14 more
+24-07-2015 21:06:05 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:06:05 [main] INFO  e.idart.database.DatabaseTools - Running liquibase file: org/celllife/idart/database/changelog-South_Africa_clinics.xml
+24-07-2015 21:06:05 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:06:05 [main] INFO                       liquibase - Successfully acquired change log lock
+24-07-2015 21:06:05 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:06:05 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:06:13 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:06:13 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:06:14 [main] ERROR dart.start.PharmacyApplication - Error while checking database consistency: 
+org.hibernate.HibernateException: Wrong column type: resultDate, expected: timestamp
+	at org.hibernate.mapping.Table.validateColumns(Table.java:261)
+	at org.hibernate.cfg.Configuration.validateSchema(Configuration.java:1083)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:116)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:317)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1294)
+	at org.hibernate.cfg.AnnotationConfiguration.buildSessionFactory(AnnotationConfiguration.java:915)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.<init>(HibernateUtil.java:185)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.rebuildUtil(HibernateUtil.java:201)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.setValidation(HibernateUtil.java:227)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:147)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+24-07-2015 21:06:14 [main] DEBUG llife.idart.gui.login.LoginErr - Login Form Created
+24-07-2015 21:06:26 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:06:26 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:06:26 [main] INFO  dart.start.PharmacyApplication - iDART @IDART.VERSION.SHORT@ starting
+24-07-2015 21:06:26 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:06:26 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:06:26 [main] INFO  .commonobjects.iDartProperties - Loading Encrypted System Properties
+24-07-2015 21:06:26 [main] WARN  .commonobjects.iDartProperties - Property: localeLanguage is null
+24-07-2015 21:06:26 [main] INFO  ommonobjects.PropertiesManager - Loading properties for interface org.celllife.idart.commonobjects.SmsProperties
+24-07-2015 21:06:26 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:06:26 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:06:26 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:06:26 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:06:26 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:06:26 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:06:26 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:06:27 [main] INFO  e.idart.database.DatabaseTools - Running liquibase file: org/celllife/idart/database/changelog-master.xml
+24-07-2015 21:06:27 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:06:27 [main] INFO                       liquibase - Successfully acquired change log lock
+24-07-2015 21:06:27 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:06:28 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:06:28 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:06:28 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:06:28 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:06:30 [main] ERROR dart.start.PharmacyApplication - Error while checking database consistency: 
+org.hibernate.HibernateException: Wrong column type: resultDate, expected: timestamp
+	at org.hibernate.mapping.Table.validateColumns(Table.java:261)
+	at org.hibernate.cfg.Configuration.validateSchema(Configuration.java:1083)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:116)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:317)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1294)
+	at org.hibernate.cfg.AnnotationConfiguration.buildSessionFactory(AnnotationConfiguration.java:915)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.<init>(HibernateUtil.java:185)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.rebuildUtil(HibernateUtil.java:201)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.setValidation(HibernateUtil.java:227)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:147)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+24-07-2015 21:06:30 [main] DEBUG llife.idart.gui.login.LoginErr - Login Form Created
+24-07-2015 21:07:44 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:07:44 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:07:44 [main] INFO  dart.start.PharmacyApplication - iDART @IDART.VERSION.SHORT@ starting
+24-07-2015 21:07:44 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:07:44 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:07:45 [main] INFO  .commonobjects.iDartProperties - Loading Encrypted System Properties
+24-07-2015 21:07:45 [main] WARN  .commonobjects.iDartProperties - Property: localeLanguage is null
+24-07-2015 21:07:45 [main] INFO  ommonobjects.PropertiesManager - Loading properties for interface org.celllife.idart.commonobjects.SmsProperties
+24-07-2015 21:07:45 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:07:45 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:07:45 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:07:45 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:07:45 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:07:45 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:07:45 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:07:45 [main] INFO  e.idart.database.DatabaseTools - Running liquibase file: org/celllife/idart/database/changelog-master.xml
+24-07-2015 21:07:46 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:07:46 [main] INFO                       liquibase - Successfully acquired change log lock
+24-07-2015 21:07:46 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:07:46 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:07:47 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:07:47 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:07:47 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:07:48 [main] INFO  dart.start.PharmacyApplication - Starting Initialisation Tasks
+24-07-2015 21:07:48 [main] WARN  ate.util.JDBCExceptionReporter - SQL Error: 0, SQLState: 08001
+24-07-2015 21:07:48 [main] ERROR ate.util.JDBCExceptionReporter - The connection attempt failed.
+24-07-2015 21:07:48 [main] ERROR dart.start.PharmacyApplication - Hibernate error during startup tasks.
+org.hibernate.exception.JDBCConnectionException: Cannot open connection
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:74)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:43)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:29)
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:426)
+	at org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:144)
+	at org.hibernate.jdbc.JDBCContext.connection(JDBCContext.java:119)
+	at org.hibernate.transaction.JDBCTransaction.begin(JDBCTransaction.java:57)
+	at org.hibernate.impl.SessionImpl.beginTransaction(SessionImpl.java:1326)
+	at org.celllife.idart.start.PharmacyApplication.setPatientAttributes(PharmacyApplication.java:373)
+	at org.celllife.idart.start.PharmacyApplication.doInitialisationTasks(PharmacyApplication.java:328)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:92)
+Caused by: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:154)
+	at org.hibernate.connection.DriverManagerConnectionProvider.getConnection(DriverManagerConnectionProvider.java:110)
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:423)
+	... 7 more
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 17 more
+24-07-2015 21:07:48 [main] DEBUG celllife.idart.gui.login.Login - Login Form Created
+24-07-2015 21:07:57 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:07:57 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:07:57 [main] INFO  dart.start.PharmacyApplication - iDART @IDART.VERSION.SHORT@ starting
+24-07-2015 21:07:57 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:07:57 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:07:58 [main] INFO  .commonobjects.iDartProperties - Loading Encrypted System Properties
+24-07-2015 21:07:58 [main] WARN  .commonobjects.iDartProperties - Property: localeLanguage is null
+24-07-2015 21:07:58 [main] INFO  ommonobjects.PropertiesManager - Loading properties for interface org.celllife.idart.commonobjects.SmsProperties
+24-07-2015 21:07:58 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:07:58 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:07:58 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:07:58 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:07:58 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:07:58 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:07:58 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:07:59 [main] INFO  e.idart.database.DatabaseTools - Running liquibase file: org/celllife/idart/database/changelog-master.xml
+24-07-2015 21:07:59 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:07:59 [main] INFO                       liquibase - Successfully acquired change log lock
+24-07-2015 21:07:59 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:07:59 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:08:00 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:08:00 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:08:00 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:08:01 [main] INFO  dart.start.PharmacyApplication - Starting Initialisation Tasks
+24-07-2015 21:08:02 [main] DEBUG   model.manager.PatientManager - Found attribute type similar to ARV Start Date: ARV Start Date
+24-07-2015 21:08:02 [main] DEBUG .manager.AdministrationManager - model.nonPersistent.PharmacyDetails@1450bdDemo Pharmacist, B.Pharm Demo Pharmacist2, B.Pharm Street Address City Tel Facility Name
+24-07-2015 21:08:02 [main] INFO  dart.start.PharmacyApplication - Finishing Initialisation Tasks
+24-07-2015 21:08:02 [main] DEBUG celllife.idart.gui.login.Login - Login Form Created
+24-07-2015 21:08:05 [main] INFO  celllife.idart.gui.login.Login - Login successful for user admin
+24-07-2015 21:08:05 [main] INFO  celllife.idart.misc.LoginTimer - Starting new logout timer with timeout 600 seconds.
+24-07-2015 21:08:05 [main] DEBUG art.gui.welcome.GenericWelcome - Creating newWelcome
+24-07-2015 21:08:05 [main] ERROR art.gui.welcome.GenericWelcome - Unable to load help.
+24-07-2015 21:08:28 [Report task] DEBUG er.exports.excel.ExcelExporter - Starting data export page 0 of 0
+24-07-2015 21:08:28 [Report task] DEBUG er.exports.excel.ExcelExporter - Completed data export page 0 of 0
+24-07-2015 21:08:28 [Report task] DEBUG er.exports.excel.ExcelExporter - Clearing hibernate session
+24-07-2015 21:10:21 [Report task] DEBUG er.exports.excel.ExcelExporter - Starting data export page 0 of 0
+24-07-2015 21:10:21 [Report task] DEBUG er.exports.excel.ExcelExporter - Completed data export page 0 of 0
+24-07-2015 21:10:21 [Report task] DEBUG er.exports.excel.ExcelExporter - Clearing hibernate session
+24-07-2015 21:17:55 [main] DEBUG celllife.idart.misc.LoginTimer - Terminating iDART - TIMER EXPIRED
+24-07-2015 21:17:55 [main] DEBUG dart.start.PharmacyApplication - Logged out..
+24-07-2015 21:17:55 [main] DEBUG celllife.idart.gui.login.Login - Login Form Created
+24-07-2015 21:17:56 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:17:56 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:17:56 [main] INFO  dart.start.PharmacyApplication - iDART @IDART.VERSION.SHORT@ exited
+24-07-2015 21:17:56 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:17:56 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:18:01 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:18:01 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:18:01 [main] INFO  dart.start.PharmacyApplication - iDART @IDART.VERSION.SHORT@ starting
+24-07-2015 21:18:01 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:18:01 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:18:02 [main] INFO  .commonobjects.iDartProperties - Loading Encrypted System Properties
+24-07-2015 21:18:02 [main] WARN  .commonobjects.iDartProperties - Property: localeLanguage is null
+24-07-2015 21:18:02 [main] INFO  ommonobjects.PropertiesManager - Loading properties for interface org.celllife.idart.commonobjects.SmsProperties
+24-07-2015 21:18:02 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:02 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:02 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:02 [main] ERROR dart.start.PharmacyApplication - Error while checking database consistency: 
+org.celllife.idart.database.DatabaseException: Error retreiving list of tables.
+	at org.celllife.idart.database.DatabaseTools.getTables(DatabaseTools.java:219)
+	at org.celllife.idart.database.DatabaseTools.checkDatabase(DatabaseTools.java:77)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:116)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+24-07-2015 21:18:02 [main] DEBUG llife.idart.gui.login.LoginErr - Login Form Created
+24-07-2015 21:18:06 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:18:06 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:18:06 [main] INFO  dart.start.PharmacyApplication - iDART @IDART.VERSION.SHORT@ starting
+24-07-2015 21:18:06 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:18:06 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:18:07 [main] INFO  .commonobjects.iDartProperties - Loading Encrypted System Properties
+24-07-2015 21:18:07 [main] WARN  .commonobjects.iDartProperties - Property: localeLanguage is null
+24-07-2015 21:18:07 [main] INFO  ommonobjects.PropertiesManager - Loading properties for interface org.celllife.idart.commonobjects.SmsProperties
+24-07-2015 21:18:07 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:07 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:07 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:07 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:07 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:07 [main] ERROR tabase.hibernate.util.JDBCUtil - Error while running sql: select id from users
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.currentSession(JDBCUtil.java:94)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.executeSQL(JDBCUtil.java:125)
+	at org.celllife.idart.database.DatabaseTools.checkDatabase(DatabaseTools.java:82)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:116)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 13 more
+24-07-2015 21:18:07 [main] ERROR dart.start.PharmacyApplication - Error while checking database consistency: 
+org.celllife.idart.database.DatabaseException: Error retreiving user list.
+	at org.celllife.idart.database.DatabaseTools.checkDatabase(DatabaseTools.java:85)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:116)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+Caused by: org.celllife.idart.database.hibernate.util.DAOException: Error while running sql: select id from users . Message: The connection attempt failed.
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.executeSQL(JDBCUtil.java:151)
+	at org.celllife.idart.database.DatabaseTools.checkDatabase(DatabaseTools.java:82)
+	... 2 more
+Caused by: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.currentSession(JDBCUtil.java:94)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.executeSQL(JDBCUtil.java:125)
+	... 3 more
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 13 more
+24-07-2015 21:18:07 [main] DEBUG llife.idart.gui.login.LoginErr - Login Form Created
+24-07-2015 21:18:11 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:18:11 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:18:11 [main] INFO  dart.start.PharmacyApplication - iDART @IDART.VERSION.SHORT@ starting
+24-07-2015 21:18:11 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:18:11 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:18:11 [main] INFO  .commonobjects.iDartProperties - Loading Encrypted System Properties
+24-07-2015 21:18:11 [main] WARN  .commonobjects.iDartProperties - Property: localeLanguage is null
+24-07-2015 21:18:11 [main] INFO  ommonobjects.PropertiesManager - Loading properties for interface org.celllife.idart.commonobjects.SmsProperties
+24-07-2015 21:18:11 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:11 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:11 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:11 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:11 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:12 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:12 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:12 [main] INFO  e.idart.database.DatabaseTools - Running liquibase file: org/celllife/idart/database/changelog-master.xml
+24-07-2015 21:18:12 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:18:12 [main] INFO                       liquibase - Successfully acquired change log lock
+24-07-2015 21:18:13 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:18:13 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:18:13 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:18:13 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:13 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:13 [main] ERROR e.idart.database.DatabaseTools - Error getting national clinic count
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.currentSession(JDBCUtil.java:94)
+	at org.celllife.idart.database.DatabaseTools.getNationalClinicCount(DatabaseTools.java:292)
+	at org.celllife.idart.database.DatabaseTools.checkClinicCount(DatabaseTools.java:283)
+	at org.celllife.idart.database.DatabaseTools.update(DatabaseTools.java:267)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:133)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 14 more
+24-07-2015 21:18:13 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:13 [main] ERROR e.idart.database.DatabaseTools - Error updating database.
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.currentSession(JDBCUtil.java:94)
+	at org.celllife.idart.database.DatabaseTools.update(DatabaseTools.java:305)
+	at org.celllife.idart.database.DatabaseTools.update(DatabaseTools.java:270)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:133)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 13 more
+24-07-2015 21:18:13 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:13 [main] ERROR tabase.hibernate.util.JDBCUtil - Error while running sql: SELECT value FROM simpledomain WHERE name = 'database_version'
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.currentSession(JDBCUtil.java:94)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.executeSQL(JDBCUtil.java:125)
+	at org.celllife.idart.database.DatabaseTools.isOldVersion(DatabaseTools.java:225)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:137)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 13 more
+24-07-2015 21:18:13 [main] ERROR dart.start.PharmacyApplication - Error while updateing the database: org.postgresql.util.PSQLException: The connection attempt failed.
+org.celllife.idart.database.DatabaseException: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.celllife.idart.database.DatabaseTools.update(DatabaseTools.java:309)
+	at org.celllife.idart.database.DatabaseTools.update(DatabaseTools.java:270)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:133)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+Caused by: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.currentSession(JDBCUtil.java:94)
+	at org.celllife.idart.database.DatabaseTools.update(DatabaseTools.java:305)
+	... 3 more
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 13 more
+24-07-2015 21:18:13 [main] DEBUG llife.idart.gui.login.LoginErr - Login Form Created
+24-07-2015 21:18:18 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:18:18 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:18:18 [main] INFO  dart.start.PharmacyApplication - iDART @IDART.VERSION.SHORT@ starting
+24-07-2015 21:18:18 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:18:18 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:18:18 [main] INFO  .commonobjects.iDartProperties - Loading Encrypted System Properties
+24-07-2015 21:18:19 [main] WARN  .commonobjects.iDartProperties - Property: localeLanguage is null
+24-07-2015 21:18:19 [main] INFO  ommonobjects.PropertiesManager - Loading properties for interface org.celllife.idart.commonobjects.SmsProperties
+24-07-2015 21:18:19 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:19 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:19 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:19 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:19 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:19 [main] ERROR tabase.hibernate.util.JDBCUtil - Error while running sql: select id from users
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.currentSession(JDBCUtil.java:94)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.executeSQL(JDBCUtil.java:125)
+	at org.celllife.idart.database.DatabaseTools.checkDatabase(DatabaseTools.java:82)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:116)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 13 more
+24-07-2015 21:18:19 [main] ERROR dart.start.PharmacyApplication - Error while checking database consistency: 
+org.celllife.idart.database.DatabaseException: Error retreiving user list.
+	at org.celllife.idart.database.DatabaseTools.checkDatabase(DatabaseTools.java:85)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:116)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+Caused by: org.celllife.idart.database.hibernate.util.DAOException: Error while running sql: select id from users . Message: The connection attempt failed.
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.executeSQL(JDBCUtil.java:151)
+	at org.celllife.idart.database.DatabaseTools.checkDatabase(DatabaseTools.java:82)
+	... 2 more
+Caused by: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.currentSession(JDBCUtil.java:94)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.executeSQL(JDBCUtil.java:125)
+	... 3 more
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 13 more
+24-07-2015 21:18:19 [main] DEBUG llife.idart.gui.login.LoginErr - Login Form Created
+24-07-2015 21:18:27 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:18:27 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:18:27 [main] INFO  dart.start.PharmacyApplication - iDART @IDART.VERSION.SHORT@ starting
+24-07-2015 21:18:27 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:18:27 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:18:27 [main] INFO  .commonobjects.iDartProperties - Loading Encrypted System Properties
+24-07-2015 21:18:27 [main] WARN  .commonobjects.iDartProperties - Property: localeLanguage is null
+24-07-2015 21:18:27 [main] INFO  ommonobjects.PropertiesManager - Loading properties for interface org.celllife.idart.commonobjects.SmsProperties
+24-07-2015 21:18:27 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:28 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:28 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:28 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:28 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:28 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:28 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:28 [main] INFO  e.idart.database.DatabaseTools - Running liquibase file: org/celllife/idart/database/changelog-master.xml
+24-07-2015 21:18:28 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:18:28 [main] INFO                       liquibase - Successfully acquired change log lock
+24-07-2015 21:18:29 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:18:29 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:18:29 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:18:29 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:29 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:18:30 [main] WARN  .hibernate.cfg.SettingsFactory - Could not obtain connection metadata
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:154)
+	at org.hibernate.connection.DriverManagerConnectionProvider.getConnection(DriverManagerConnectionProvider.java:110)
+	at org.hibernate.cfg.SettingsFactory.buildSettings(SettingsFactory.java:84)
+	at org.hibernate.cfg.Configuration.buildSettings(Configuration.java:2009)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1292)
+	at org.hibernate.cfg.AnnotationConfiguration.buildSessionFactory(AnnotationConfiguration.java:915)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.<init>(HibernateUtil.java:185)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.rebuildUtil(HibernateUtil.java:201)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.setValidation(HibernateUtil.java:227)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:147)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 18 more
+24-07-2015 21:18:31 [main] ERROR dart.start.PharmacyApplication - Error while checking database consistency: 
+org.hibernate.HibernateException: Wrong column type: counselingDate, expected: timestamp
+	at org.hibernate.mapping.Table.validateColumns(Table.java:261)
+	at org.hibernate.cfg.Configuration.validateSchema(Configuration.java:1083)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:116)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:317)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1294)
+	at org.hibernate.cfg.AnnotationConfiguration.buildSessionFactory(AnnotationConfiguration.java:915)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.<init>(HibernateUtil.java:185)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.rebuildUtil(HibernateUtil.java:201)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.setValidation(HibernateUtil.java:227)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:147)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+24-07-2015 21:18:31 [main] DEBUG llife.idart.gui.login.LoginErr - Login Form Created
+24-07-2015 21:22:02 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:22:02 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:22:02 [main] INFO  dart.start.PharmacyApplication - iDART @IDART.VERSION.SHORT@ starting
+24-07-2015 21:22:02 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:22:02 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:22:02 [main] INFO  .commonobjects.iDartProperties - Loading Encrypted System Properties
+24-07-2015 21:22:02 [main] WARN  .commonobjects.iDartProperties - Property: localeLanguage is null
+24-07-2015 21:22:02 [main] INFO  ommonobjects.PropertiesManager - Loading properties for interface org.celllife.idart.commonobjects.SmsProperties
+24-07-2015 21:22:02 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:22:02 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:22:02 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:22:02 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:22:02 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:22:02 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:22:02 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:22:03 [main] INFO  e.idart.database.DatabaseTools - Running liquibase file: org/celllife/idart/database/changelog-master.xml
+24-07-2015 21:22:03 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:22:03 [main] INFO                       liquibase - Successfully acquired change log lock
+24-07-2015 21:22:04 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:22:04 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:22:04 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:22:04 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:22:04 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:22:06 [main] ERROR dart.start.PharmacyApplication - Error while checking database consistency: 
+org.hibernate.HibernateException: Wrong column type: counselingDate, expected: timestamp
+	at org.hibernate.mapping.Table.validateColumns(Table.java:261)
+	at org.hibernate.cfg.Configuration.validateSchema(Configuration.java:1083)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:116)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:317)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1294)
+	at org.hibernate.cfg.AnnotationConfiguration.buildSessionFactory(AnnotationConfiguration.java:915)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.<init>(HibernateUtil.java:185)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.rebuildUtil(HibernateUtil.java:201)
+	at org.celllife.idart.database.hibernate.util.HibernateUtil.setValidation(HibernateUtil.java:227)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:147)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+24-07-2015 21:22:06 [main] DEBUG llife.idart.gui.login.LoginErr - Login Form Created
+24-07-2015 21:24:40 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:24:40 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:24:40 [main] INFO  dart.start.PharmacyApplication - iDART @IDART.VERSION.SHORT@ starting
+24-07-2015 21:24:40 [main] INFO  dart.start.PharmacyApplication - *********************
+24-07-2015 21:24:40 [main] INFO  dart.start.PharmacyApplication - 
+24-07-2015 21:24:40 [main] INFO  .commonobjects.iDartProperties - Loading Encrypted System Properties
+24-07-2015 21:24:40 [main] WARN  .commonobjects.iDartProperties - Property: localeLanguage is null
+24-07-2015 21:24:40 [main] INFO  ommonobjects.PropertiesManager - Loading properties for interface org.celllife.idart.commonobjects.SmsProperties
+24-07-2015 21:24:40 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:24:40 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:24:40 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:24:41 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:24:41 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:24:41 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:24:41 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:24:41 [main] INFO  e.idart.database.DatabaseTools - Running liquibase file: org/celllife/idart/database/changelog-master.xml
+24-07-2015 21:24:41 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:24:41 [main] INFO                       liquibase - Successfully acquired change log lock
+24-07-2015 21:24:42 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:24:42 [main] INFO                       liquibase - Reading from databasechangelog
+24-07-2015 21:24:42 [main] INFO                       liquibase - Successfully released change log lock
+24-07-2015 21:24:42 [main] INFO  tabase.hibernate.util.JDBCUtil - Closing JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:24:42 [main] INFO  tabase.hibernate.util.JDBCUtil - Opening JDBC connection to jdbc:postgresql://localhost:5432/pharm
+24-07-2015 21:24:42 [main] ERROR e.idart.database.DatabaseTools - Error getting national clinic count
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:137)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:124)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:30)
+	at org.postgresql.jdbc3.Jdbc3Connection.<init>(Jdbc3Connection.java:24)
+	at org.postgresql.Driver.makeConnection(Driver.java:386)
+	at org.postgresql.Driver.connect(Driver.java:260)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at org.celllife.idart.database.hibernate.util.JDBCUtil.currentSession(JDBCUtil.java:94)
+	at org.celllife.idart.database.DatabaseTools.getNationalClinicCount(DatabaseTools.java:292)
+	at org.celllife.idart.database.DatabaseTools.checkClinicCount(DatabaseTools.java:283)
+	at org.celllife.idart.database.DatabaseTools.update(DatabaseTools.java:267)
+	at org.celllife.idart.start.PharmacyApplication.performStartupChecks(PharmacyApplication.java:133)
+	at org.celllife.idart.start.PharmacyApplication.main(PharmacyApplication.java:91)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:135)
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:104)
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:73)
+	at org.postgresql.core.PGStream.ReceiveChar(PGStream.java:259)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:254)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:95)
+	... 14 more

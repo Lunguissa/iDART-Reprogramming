@@ -8,6 +8,7 @@ import java.util.Map;
 
 
 
+
 import model.manager.PatientManager;
 
 import org.apache.log4j.Logger;
@@ -61,7 +62,7 @@ public class ViralLoadTab extends GenericTab implements IPatientTab {
 			latestViralLoad.setRecommendedToCounselor(rdBtnRecommendCounseling.getSelection());
 			latestViralLoad.setResultDate(btnTestResultDate.getDate()==null ? null : new java.sql.Date(btnTestResultDate.getDate().getTime()));
 			latestViralLoad.setCounselingDate(btnCounselingDate.getDate()==null ? null : new java.sql.Date(btnCounselingDate.getDate().getTime()));
-			latestViralLoad.setGaacNumber(Integer.parseInt(txtGaacNumber.getText()));
+			latestViralLoad.setGaacNumber(Integer.parseInt((txtGaacNumber.getText().equals("") ? "0" : txtGaacNumber.getText())));
 			patient.getPatientViralLoads().add(latestViralLoad);
 		}
 	}
@@ -498,7 +499,7 @@ public class ViralLoadTab extends GenericTab implements IPatientTab {
 		// if patient is pregnant, confirm date must be set
 		if ((rdBtnHighViralLoad.getSelection()) && 
 				((btnTestResultDate.getDate() == null) 
-						|| lastViralLoad.getResultDate()==null ? false :btnTestResultDate.getDate().getDate()<lastViralLoad.getResultDate().getDate())) {
+						|| (lastViralLoad==null || lastViralLoad.getResultDate()==null ? false :btnTestResultDate.getDate().getDate()<lastViralLoad.getResultDate().getDate()))) {
 			title = Messages.getString("patient.viralload.resultdate.error.title");
 			message = Messages.getString("patient.viralload.resultdate.error.message");
 			result = false;
